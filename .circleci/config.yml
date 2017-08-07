@@ -17,5 +17,6 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: pub get
       - run: pub get --offline
-      - run: nohup pub serve > /dev/null 2>&1 & sleep 2 && pub run test --pub-serve=8081 -p phantomjs
+      - run: nohup pub serve > /dev/null 2>&1 & sleep 1
+      - run: pub run test --pub-serve=8081 -p phantomjs
 
