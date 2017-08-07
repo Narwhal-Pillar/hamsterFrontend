@@ -21,8 +21,8 @@ jobs:
 #      - run: pub run test --pub-serve=8081 -p phantomjs
 
       - run:
-        - type: shell
-          command: |
+        shell: /bin/sh
+        command: |
             nohup pub serve > /dev/null 2>&1 &
             sleep 1
             pub run test --pub-serve=8081 -p phantomjs
