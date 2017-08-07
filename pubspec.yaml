@@ -7,15 +7,21 @@ environment:
 
 dependencies:
   over_react: "^1.14.0"
+  test: "^0.12.24"
 
 dev_dependencies:
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
+  over_react_test: "^1.1.1"
+  coverage: "^0.7.2"
 
 transformers:
 - over_react
 - dart_to_js_script_rewriter
+- test/pub_serve:
+      $include: test/**_test{.*,}.dart
 - $dart2js
+
 
 # Uncomment the following in sdk 1.24+ to make pub serve
 # use dartdevc (webdev.dartlang.org/tools/dartdevc).

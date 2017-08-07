@@ -1,0 +1,29 @@
+# Golang CircleCI 2.0 configuration file
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version
+      - image: narwhalpillar/dart-phantom
+
+    #### TEMPLATE_NOTE: go expects specific checkout path representing url
+    #### expecting it in the form of
+    ####   /go/src/github.com/circleci/go-tool
+    ####   /go/src/bitbucket.org/circleci/go-tool
+    working_directory: /app
+    steps:
+      - checkout
+
+      # specify any bash command here prefixed with `run: `
+      - run: pub get
+      - run: pub get --offline
+      - run: pub run test -p phantomjs
+#      - run: nohup pub serve > /dev/null 2>&1 & sleep 1
+#      - run: pub run test --pub-serve=8081 -p phantomjs
+
+#      - run:
+#          shell: /bin/sh
+#          command: |
+#            nohup pub serve --hostname=0.0.0.0 --port=9080 > /dev/null 2>&1 &
+#            sleep 1
+#            pub run test --pub-serve=9080 -p phantomjs
