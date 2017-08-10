@@ -20,15 +20,16 @@ class RatingComponent<T extends RatingProps, S extends RatingState> extends UiSt
     double x = this.props.rating;
     var classString = '';
     for(var i = 0; i < 5; i++) {
-      classString = 'empty-star';
+      classString = 'fa-star-o empty-star';
+      
       if(x >= 1) {
-        classString = 'full-star';
+        classString = 'fa-star full-star';
         x--;
       } else if(x >=.5) {
-        classString = 'empty-star';
+        classString = 'fa-star-half-o half-star';
         x -= 0.5;
       } 
-      stars.add((Dom.i()..className='fa fa-star-o ${classString}'..key=i)());
+      stars.add((Dom.i()..className='fa ${classString}'..key=i)());
     }
     return (Dom.span()(
       stars

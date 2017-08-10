@@ -33,17 +33,43 @@ void main(){
       RatingComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
 
-      expect(renderedComponent.querySelectorAll('.empty-star').length, 5);
       expect(renderedComponent.querySelectorAll('.full-star').length, 0);
+      expect(renderedComponent.querySelectorAll('.half-star').length, 0);
+      expect(renderedComponent.querySelectorAll('.empty-star').length, 5);
     });
 
-    test('Should render 3 star rating', () {
+    test('Should render 3.2 star rating', () {
       var instance = render((Rating()..rating=3.2));
       RatingComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
 
-      expect(renderedComponent.querySelectorAll('.empty-star').length, 2);
       expect(renderedComponent.querySelectorAll('.full-star').length, 3);
+      expect(renderedComponent.querySelectorAll('.half-star').length, 0);
+      expect(renderedComponent.querySelectorAll('.empty-star').length, 2);
     });
+
+    test('Should render 3.7 star rating', () {
+      var instance = render((Rating()..rating=3.7));
+      RatingComponent component = getDartComponent(instance);
+      var renderedComponent = findDomNode(component);
+
+
+      expect(renderedComponent.querySelectorAll('.full-star').length, 3);
+      expect(renderedComponent.querySelectorAll('.half-star').length, 1);
+      expect(renderedComponent.querySelectorAll('.empty-star').length, 1);
+    });
+
+    test('Should render 4.9 star rating', () {
+      var instance = render((Rating()..rating=4.9));
+      RatingComponent component = getDartComponent(instance);
+      var renderedComponent = findDomNode(component);
+
+
+      expect(renderedComponent.querySelectorAll('.full-star').length, 4);
+      expect(renderedComponent.querySelectorAll('.half-star').length, 1);
+      expect(renderedComponent.querySelectorAll('.empty-star').length, 0);
+    });
+
+
   });
 }
