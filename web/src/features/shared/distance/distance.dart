@@ -16,6 +16,6 @@ class DistanceState extends UiState {
 @Component()
 class DistanceComponent<T extends DistanceProps, S extends DistanceState> extends UiStatefulComponent<T, S> {
   render() {
-    return (Dom.span()('1 mile'));
+    return (Dom.span()('${this.props.distance} ${this.props.distance > 1.0 ? "miles" : "mile"}'));
   }
 }
