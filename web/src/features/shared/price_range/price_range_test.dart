@@ -5,7 +5,7 @@ import '../shared.dart';
 void main() {
   group('Price Range Tests', (){
     test('Should render Price Range Componet', () {
-      var renderedInstance = render( PriceRange()());
+      var renderedInstance = render( (PriceRange()..priceRange=1)());
 
       PriceRangeComponent component = getDartComponent(renderedInstance);
 
@@ -15,13 +15,24 @@ void main() {
     });
 
     test('Should render Price Range One', () {
-      var renderedInstance = render( PriceRange()());
+      var renderedInstance = render((PriceRange()..priceRange=1)());
 
       PriceRangeComponent component = getDartComponent(renderedInstance);
 
       var renderedComponent = findDomNode(component);
 
       expect(renderedComponent.querySelectorAll('i').length, 1);
+    });
+
+   
+    test('Should render Price Range Two', () {
+      var renderedInstance = render( (PriceRange()..priceRange=2)());
+
+      PriceRangeComponent component = getDartComponent(renderedInstance);
+
+      var renderedComponent = findDomNode(component);
+
+      expect(renderedComponent.querySelectorAll('i').length, 2);
     });
   });
 }
