@@ -33,5 +33,25 @@ void main(){
 
       expect(renderedComponent.text, '3 miles');
     });
+
+    test('Should render Distance of 3.84', () {
+      var instance = render((Distance()..distance=3.84)());
+
+      DistanceComponent component = getDartComponent(instance);
+
+      var renderedComponent = findDomNode(component);
+
+      expect(renderedComponent.text, '3.84 miles');
+    });
+
+    test('Should render Distance of 0.84', () {
+      var instance = render((Distance()..distance=0.84)());
+
+      DistanceComponent component = getDartComponent(instance);
+
+      var renderedComponent = findDomNode(component);
+
+      expect(renderedComponent.text, '0.84 mile');
+    });
   });
 }
