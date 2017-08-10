@@ -16,6 +16,12 @@ class PlaceDetailsState extends UiState {
 @Component()
 class PlaceDetailsComponent<T extends PlaceDetailsProps, S extends PlaceDetailsState> extends UiStatefulComponent<T,S> {
   render() {
-    return Dom.div()();
+    return (Dom.div()(
+      (Dom.ul()(
+        ((Dom.li()..name="food-type")(
+          (Dom.label()("Food Type: ")), (FoodTypeText()..foodType="Italian")()
+        ))
+      ))
+    ));
   }
 }

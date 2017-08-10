@@ -13,5 +13,15 @@ void main() {
 
       expect(renderedComponent.toString(), 'div');
     });
+
+    test("Should display food type", () {
+      var instance = render(PlaceDetails()());
+      
+      PlaceDetailsComponent component = getDartComponent(instance);
+
+      var renderedComponent = findDomNode(component);
+      
+      expect(renderedComponent.querySelector('[name=food-type]').text, 'Food Type: Italian');
+    });
   });
 }
