@@ -20,6 +20,12 @@ class PlaceDetailsComponent<T extends PlaceDetailsProps, S extends PlaceDetailsS
       (Dom.ul()(
         ((Dom.li()..name="food-type")(
           (Dom.label()("Food Type: ")), (FoodTypeText()..foodType="Italian")()
+        )),
+        ((Dom.li()..name="price")(
+          (Dom.label()("Price: ")), (PriceRange()..priceRange=4)()
+        )),
+        ((Dom.li()..name="rating")(
+          (Dom.label()("Rating: ")), (Rating()..rating=4.5)()
         ))
       ))
     ));

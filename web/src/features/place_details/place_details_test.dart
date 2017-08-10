@@ -23,5 +23,35 @@ void main() {
       
       expect(renderedComponent.querySelector('[name=food-type]').text, 'Food Type: Italian');
     });
+
+    test("Should display price", () {
+      var instance = render(PlaceDetails()());
+      
+      PlaceDetailsComponent component = getDartComponent(instance);
+
+      var renderedComponent = findDomNode(component);
+      
+      expect(renderedComponent.querySelector('[name=price]').text, 'Price: ');
+    });
+    
+    test("Should display price", () {
+      var instance = render(PlaceDetails()());
+      
+      PlaceDetailsComponent component = getDartComponent(instance);
+
+      var renderedComponent = findDomNode(component);
+      
+      expect(renderedComponent.querySelector('[name=price]').text, 'Price: ');
+    });
+
+    test("Should display rating", () {
+      var instance = render(PlaceDetails()());
+      
+      PlaceDetailsComponent component = getDartComponent(instance);
+
+      var renderedComponent = findDomNode(component);
+      
+      expect(renderedComponent.querySelector('[name=rating]').text, 'Rating: ');
+    });
   });
 }
