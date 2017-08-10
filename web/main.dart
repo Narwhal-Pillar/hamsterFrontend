@@ -8,4 +8,5 @@ void main() {
   setClientConfiguration();
 
   react_dom.render((HelloWorld()..message="Hello World!")(), querySelector('.hello-world'));
+  react_dom.render(AppContainer()(), querySelector('.app-container'));
 }
