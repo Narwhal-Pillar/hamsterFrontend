@@ -28,8 +28,6 @@ void main(){
       expect(renderedComponent.children.length, 5);
     });
 
-
-
     test('Should render 0 star rating', () {
       var instance = render((Rating()..rating=0.0));
       RatingComponent component = getDartComponent(instance);
@@ -37,6 +35,15 @@ void main(){
 
       expect(renderedComponent.querySelectorAll('.empty-star').length, 5);
       expect(renderedComponent.querySelectorAll('.full-star').length, 0);
+    });
+
+    test('Should render 3 star rating', () {
+      var instance = render((Rating()..rating=3.2));
+      RatingComponent component = getDartComponent(instance);
+      var renderedComponent = findDomNode(component);
+
+      expect(renderedComponent.querySelectorAll('.empty-star').length, 2);
+      expect(renderedComponent.querySelectorAll('.full-star').length, 3);
     });
   });
 }
