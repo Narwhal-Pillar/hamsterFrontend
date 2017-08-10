@@ -16,6 +16,8 @@
  @Component()
  class PriceRangeComponent<T extends PriceRangeProps, S extends PriceRangeState> extends UiStatefulComponent<T, S> {
   render(){
-    return (Dom.span()());
+    return (Dom.span()(
+      (Dom.i()..className='fa fa-usd fa-lg')()
+    ));
   }   
  }

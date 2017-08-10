@@ -13,5 +13,15 @@ void main() {
 
       expect(renderedComponent.toString(), 'span' ); 
     });
+
+    test('Should render Price Range One', () {
+      var renderedInstance = render( PriceRange()());
+
+      PriceRangeComponent component = getDartComponent(renderedInstance);
+
+      var renderedComponent = findDomNode(component);
+
+      expect(renderedComponent.querySelectorAll('i').length, 1);
+    });
   });
 }
