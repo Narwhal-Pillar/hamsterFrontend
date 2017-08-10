@@ -1,4 +1,4 @@
-part of over_react.web.feature.shared;
+ part of over_react.web.features.shared;
 
 @Factory()
 UiFactory<RatingProps> Rating;

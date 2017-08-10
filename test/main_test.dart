@@ -9,6 +9,7 @@ import '../web/src/features/app_container/app_container_test.dart' as app_contai
 import '../web/src/features/shared/food_type/food_type_text_test.dart' as food_type_text;
 import '../web/src/features/shared/price_range/price_range_test.dart' as price_range;
 import '../web/src/features/shared/rating/rating_test.dart' as rating;
+import '../web/src/features/shared/distance/distance_test.dart' as distance;
 
 void main() {
   setClientConfiguration();
@@ -19,4 +20,5 @@ void main() {
   food_type_text.main();
   price_range.main();
   rating.main();
+  distance.main();
 }
