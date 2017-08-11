@@ -14,7 +14,7 @@ class TopNavComponent<T extends TopNavProps, S extends TopNavState> extends UiSt
 
   render() {
     return (Dom.div() (
-        Dom.h1()("Hamster")
+        (Dom.h1()..className="text-center")("Hamster")
     ));
   }
 }

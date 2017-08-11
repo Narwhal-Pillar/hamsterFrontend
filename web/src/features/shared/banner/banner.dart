@@ -22,10 +22,12 @@ class BannerComponent<T extends BannerProps, S extends BannerState> extends UiSt
       'backgroundImage': "url(${this.props.imageUrl})"
     };
 
-    return ((Dom.div()..name="banner"
+    return ((Dom.div()
+      ..name="banner"
       ..style=divStyle
+      ..className="banner"
       )(
-        (Dom.h1()(this.props.restaurantName))
+        ((Dom.h1()..className="text-center banner-title")(this.props.restaurantName))
       ));
   }
 }

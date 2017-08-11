@@ -23,8 +23,8 @@ class PlaceDetailsComponent<T extends PlaceDetailsProps, S extends PlaceDetailsS
   render() {
     return (Dom.div()(
       ((Banner()
-        ..restaurantName="Jimmy John's"
-        ..imageUrl="http://via.placeholder.com/350x150"
+        ..restaurantName="Malo"
+        ..imageUrl="http://www.littlelessonsinabigcity.com/wp-content/uploads/2014/06/malo_DSM-101.jpg"
       )
       ()),
       (Dom.ul()(
