@@ -10,3 +10,4 @@ doc/api/
 
 # IDE files
 .idea
+.DS_Store
