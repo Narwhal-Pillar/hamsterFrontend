@@ -90,7 +90,6 @@ void main() {
       expect(renderedComponent.querySelector('[name=price]').children[1].children.length, 1);
       expect(renderedComponent.querySelector('[name=rating]').children[1].children.length, 5);
       expect(renderedComponent.querySelector('[name=distance]').text, 'Distance: 1.7 miles');
-
     });
   });
 }
