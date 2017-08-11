@@ -17,5 +17,5 @@ jobs:
       # specify any bash command here prefixed with `run: `
       - run: pub get
       - run: pub get --offline
-      - run: pub serve & sleep 3 && pub run test --pub-serve=8081 -p phantomjs
+      - run: pub serve & sleep 5 && pub run test --pub-serve=8081 -p phantomjs
       #- run: pub run test -p phantomjs
