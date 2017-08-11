@@ -5,6 +5,8 @@ UiFactory<PlaceDetailsProps> PlaceDetails;
 
 @Props()
 class PlaceDetailsProps extends UiProps {
+  String restaurantName;
+  String imageUrl;
   String foodType;
   int price;
   double rating;
@@ -20,6 +22,11 @@ class PlaceDetailsState extends UiState {
 class PlaceDetailsComponent<T extends PlaceDetailsProps, S extends PlaceDetailsState> extends UiStatefulComponent<T,S> {
   render() {
     return (Dom.div()(
+      ((Banner()
+        ..restaurantName="Jimmy John's"
+        ..imageUrl="http://via.placeholder.com/350x150"
+      )
+      ()),
       (Dom.ul()(
         ((Dom.li()..name="food-type")(
           (Dom.label()("Food Type: ")), (FoodTypeText()..foodType=this.props.foodType)()

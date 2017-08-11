@@ -10,6 +10,7 @@ import '../web/src/features/shared/price_range/price_range_test.dart' as price_r
 import '../web/src/features/shared/rating/rating_test.dart' as rating;
 import '../web/src/features/shared/distance/distance_test.dart' as distance;
 import '../web/src/features/place_details/place_details_test.dart' as place_details;
+import '../web/src/features/shared/banner/banner_test.dart' as banner;
 
 void main() {
   setClientConfiguration();
@@ -21,4 +22,5 @@ void main() {
   rating.main();
   distance.main();
   place_details.main();
+  banner.main();
 }

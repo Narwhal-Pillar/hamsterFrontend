@@ -17,17 +17,18 @@ class RatingState extends UiState {
 class RatingComponent<T extends RatingProps, S extends RatingState> extends UiStatefulComponent<T, S> {
   render() {
     List stars = [];
-    double x = this.props.rating;
+    double counter = this.props.rating;
     var classString = '';
+    
     for(var i = 0; i < 5; i++) {
       classString = 'fa-star-o empty-star';
       
-      if(x >= 1) {
+      if(counter >= 1) {
         classString = 'fa-star full-star';
-        x--;
-      } else if(x >=.5) {
+        counter--;
+      } else if(counter >=.5) {
         classString = 'fa-star-half-o half-star';
-        x -= 0.5;
+        counter -= 0.5;
       } 
       stars.add((Dom.i()..className='fa ${classString}'..key=i)());
     }

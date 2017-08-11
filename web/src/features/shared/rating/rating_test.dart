@@ -53,7 +53,6 @@ void main(){
       RatingComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
 
-
       expect(renderedComponent.querySelectorAll('.full-star').length, 3);
       expect(renderedComponent.querySelectorAll('.half-star').length, 1);
       expect(renderedComponent.querySelectorAll('.empty-star').length, 1);
@@ -63,7 +62,6 @@ void main(){
       var instance = render((Rating()..rating=4.9));
       RatingComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
-
 
       expect(renderedComponent.querySelectorAll('.full-star').length, 4);
       expect(renderedComponent.querySelectorAll('.half-star').length, 1);
