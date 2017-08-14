@@ -6,6 +6,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
+  font-size: 100%;
 }
 
 #output {
@@ -14,12 +15,32 @@ html, body {
   text-align: center;
 }
 
+.top-nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.nav-logo-image {
+  display: inline-block;
+  height: 8em;
+}
+
+.nav-logo-text {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 4em;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
 .banner {
   min-height: 500px;
   background: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
+  margin-bottom: 50px;
 }
 
 .banner-title {
@@ -31,4 +52,16 @@ html, body {
   font-weight: 600;
   color: #fff;
   margin: 0;
+}
+
+.place-details > li {
+  margin-bottom: 45px;
+}
+.place-details > li > label {
+  margin-right: 10px;
+}
+.place-details > li > span,
+.place-details > li > label {
+  font-size: 70px;
+  font-weight: 600;
 }

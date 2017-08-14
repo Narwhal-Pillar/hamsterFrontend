@@ -10,6 +10,8 @@ void main() {
        TopNavComponent component = getDartComponent(renderedInstance);
 
        var renderedComponent = findDomNode(component);
+
+       expect(renderedComponent.querySelector('div > img').toString(), 'img');
        expect(renderedComponent.querySelector('div > h1').text, 'Hamster');
     });
   });
