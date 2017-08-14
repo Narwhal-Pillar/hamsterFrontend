@@ -21,13 +21,13 @@ class PlaceDetailsState extends UiState {
 @Component()
 class PlaceDetailsComponent<T extends PlaceDetailsProps, S extends PlaceDetailsState> extends UiStatefulComponent<T,S> {
   render() {
-    return (Dom.div()(
+    return ((Dom.div()..className="well")(
       ((Banner()
-        ..restaurantName="Jimmy John's"
-        ..imageUrl="http://via.placeholder.com/350x150"
+        ..restaurantName="Malo"
+        ..imageUrl="http://www.littlelessonsinabigcity.com/wp-content/uploads/2014/06/malo_DSM-101.jpg"
       )
       ()),
-      (Dom.ul()(
+      ((Dom.ul()..className="list-unstyled place-details")(
         ((Dom.li()..name="food-type")(
           (Dom.label()("Food Type: ")), (FoodTypeText()..foodType=this.props.foodType)()
         )),

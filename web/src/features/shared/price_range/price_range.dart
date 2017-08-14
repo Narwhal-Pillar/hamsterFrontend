@@ -18,7 +18,7 @@
   render(){
      List priceRangeOutput = [];
     for (var i = 0; i < this.props.priceRange; i++){
-      priceRangeOutput.add((Dom.i()..className='fa fa-usd fa-lg'..key=i)());
+      priceRangeOutput.add((Dom.i()..className='fa fa-usd'..key=i)());
     }
     return (Dom.span()(
       priceRangeOutput
