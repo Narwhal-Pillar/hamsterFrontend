@@ -19,7 +19,7 @@ class AppContainerState extends UiState {
 @Component()
 class AppContainerComponent<T extends AppContainerProps,
     S extends AppContainerState> extends UiStatefulComponent<T, S> {
-  var url = 'http://hamster-wheel.herokuapp.com/places';
+  var url = 'https://hamster-wheel.herokuapp.com/places';
 
   getPlaceDetails() {
     return HttpRequest.getString(url).then((response) {
