@@ -14,17 +14,15 @@ class PlaceDetailsProps extends UiProps {
 }
 
 @State()
-class PlaceDetailsState extends UiState {
-
-}
+class PlaceDetailsState extends UiState {}
 
 @Component()
 class PlaceDetailsComponent<T extends PlaceDetailsProps, S extends PlaceDetailsState> extends UiStatefulComponent<T,S> {
   render() {
     return ((Dom.div()..className="placeDetails well")(
       ((Banner()
-        ..restaurantName="Malo"
-        ..imageUrl="http://www.littlelessonsinabigcity.com/wp-content/uploads/2014/06/malo_DSM-101.jpg"
+        ..restaurantName=props.restaurantName
+        ..imageUrl=props.imageUrl
       )
       ()),
       ((Dom.ul()..className="list-unstyled place-details")(
