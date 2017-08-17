@@ -27,18 +27,18 @@ void main() {
 
     });
 
-    test('Should change state when update place details is called', () {
+    test('Should change state when update place details is called', ()  async {
       var instance = render(AppContainer()());
       AppContainerComponent component = getDartComponent(instance);
 
-      component.getPlaceDetails().then((_) {
-        expect(component.state.name.isNotEmpty, true);
-        expect(component.state.imageUrl.isNotEmpty, true);
-        expect(component.state.foodType.isNotEmpty, true);
-        expect(component.state.price.isNaN, false);
-        expect(component.state.rating.isNaN, false);
-        expect(component.state.distance.isNaN, false);
-      });
+      await component.getPlaceDetails();
+
+      expect(component.state.name.isNotEmpty, true);
+      expect(component.state.imageUrl.isNotEmpty, true);
+      expect(component.state.foodType.isNotEmpty, true);
+      expect(component.state.price.isNaN, false);
+      expect(component.state.rating.isNaN, false);
+      expect(component.state.distance.isNaN, false);
     });
   });
 }
