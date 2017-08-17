@@ -10,7 +10,7 @@ class PlaceDetailsProps extends UiProps {
   String foodType;
   int price;
   double rating;
-  double distance; 
+  double distance;
 }
 
 @State()
@@ -21,7 +21,7 @@ class PlaceDetailsState extends UiState {
 @Component()
 class PlaceDetailsComponent<T extends PlaceDetailsProps, S extends PlaceDetailsState> extends UiStatefulComponent<T,S> {
   render() {
-    return ((Dom.div()..className="well")(
+    return ((Dom.div()..className="placeDetails well")(
       ((Banner()
         ..restaurantName="Malo"
         ..imageUrl="http://www.littlelessonsinabigcity.com/wp-content/uploads/2014/06/malo_DSM-101.jpg"

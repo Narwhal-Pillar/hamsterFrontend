@@ -12,4 +12,14 @@ void main() {
       expect(renderedComponent.querySelector('div > div > h1').text, 'Hamster');
     });
   });
+
+  test('Should render place details', () {
+    var instance = render(AppContainer()());
+    AppContainerComponent component = getDartComponent(instance);
+    var renderedComponent = findDomNode(component);
+
+    print(renderedComponent.children[0].children[1].className);
+    
+    expect(renderedComponent.children[0].children[1].className.contains('placeDetails'), true);
+  });
 }
