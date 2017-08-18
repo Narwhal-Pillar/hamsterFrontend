@@ -41,4 +41,19 @@ void main() {
       expect(component.state.distance.isNaN, false);
     });
   });
+
+  group("Location Tests", () {
+    test("Should return valid latitude and longitude numbers", () async {
+      var instance = render(AppContainer()());
+
+      AppContainerComponent component = getDartComponent(instance);
+
+      await component.getLocation();
+
+      RegExp exp = new RegExp(r"^(\-?\d+(\.\d+)?)$");
+
+      expect(exp.hasMatch(component.state.latitude.toString()), true);
+      expect(exp.hasMatch(component.state.longitude.toString()), true);
+    });
+  });
 }

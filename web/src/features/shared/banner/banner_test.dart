@@ -37,7 +37,7 @@ void main() {
       BannerComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
 
-      expect(renderedComponent.style.backgroundImage, "url(http://via.placeholder.com/350x150)");
+      expect(renderedComponent.style.backgroundImage.contains("http://via.placeholder.com/350x150"), true);
     });
   });
   
