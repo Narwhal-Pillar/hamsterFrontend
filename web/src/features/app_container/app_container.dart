@@ -30,8 +30,6 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
     try {
       return window.navigator.geolocation.getCurrentPosition()
           .then((Geoposition position) {
-        print(position.coords.latitude);
-        print(position.coords.longitude);
         setState(newState()
           ..latitude = position.coords.latitude
           ..longitude = position.coords.longitude);
@@ -44,8 +42,8 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
   }
 
   getPlaceDetails() {
-    // Add location lang, long to be sent to the backend
-    return HttpRequest.getString(url).then((response) {
+    var urlWithLocationParameters = url + "/${state.latitude},${state.longitude}";
+    return HttpRequest.getString(urlWithLocationParameters).then((response) {
       setPlaceDetails(JSON.decode(response));
     });
   }
@@ -62,8 +60,9 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
 
   @override
   componentDidMount() {
-    // Get Location
-    getPlaceDetails();
+    getLocation().then((_) {
+      getPlaceDetails();
+    });
   }
 
   render() {
