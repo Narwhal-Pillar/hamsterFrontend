@@ -4,6 +4,7 @@ import 'package:over_react/over_react.dart';
 import 'features/shared/shared.dart';
 import 'dart:html';
 import 'dart:convert';
+import 'dart:async';
 
 part 'features/top_nav/top_nav.dart';
 part 'features/app_container/app_container.dart';

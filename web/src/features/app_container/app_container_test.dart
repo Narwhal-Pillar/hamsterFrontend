@@ -20,7 +20,6 @@ void main() {
     test('Should render place details', () {
       var instance = render(AppContainer()());
       AppContainerComponent component = getDartComponent(instance);
-      
       var renderedComponent = findDomNode(component);
 
       expect(renderedComponent.querySelector('h2').text, "Loading");

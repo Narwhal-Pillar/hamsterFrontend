@@ -26,7 +26,6 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
   var url = 'https://hamster-wheel.herokuapp.com/places';
 
   getLocation() {
-
     try {
       return window.navigator.geolocation.getCurrentPosition()
           .then((Geoposition position) {
@@ -35,14 +34,15 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
           ..longitude = position.coords.longitude);
       });
     } catch (err) {
-      return setState(newState()
-        ..latitude = 41.5842007
-        ..longitude = -93.6354468);
+        setState(newState()
+          ..latitude = 41.5842007
+          ..longitude = -93.6354468);
     }
+    return new Future((){});
   }
 
   getPlaceDetails() {
-    var urlWithLocationParameters = url + "/${state.latitude},${state.longitude}";
+    var urlWithLocationParameters = url + "?location=${state.latitude},${state.longitude}";
     return HttpRequest.getString(urlWithLocationParameters).then((response) {
       setPlaceDetails(JSON.decode(response));
     });
