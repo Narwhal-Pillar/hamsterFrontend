@@ -84,6 +84,7 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
           ..foodType = state.foodType
           ..rating = state.rating
           ..price = state.price
-          ..distance = state.distance)())));
+          ..distance = state.distance)(),
+        ActionControls()())));
   }
 }

@@ -12,9 +12,19 @@ class ActionControlsProps extends UiProps {
 class ActionControlsComponent extends UiComponent<ActionControlsProps> {
   @override
   render() {
-    return Dom.div()(
-      Dom.button()('Next place'),
-      Dom.button()('Show route')
+    return (Dom.div()
+      ..className="row action-controls"
+    )(
+      (Dom.div()..className="col-xs-6")(
+        (Dom.button()
+        ..className="btn-action btn btn-lg btn-default")
+        ('No, Thanks')
+      ),
+      (Dom.div()..className="col-xs-6")(
+        (Dom.button()
+          ..className="btn-action btn btn-lg btn-primary pull-right")
+        ('Show Map')
+      )
     );
   }
 }

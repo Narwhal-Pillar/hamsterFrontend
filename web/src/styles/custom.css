@@ -66,3 +66,9 @@ html, body {
   font-size: 70px;
   font-weight: 600;
 }
+
+.btn-action {
+  font-size: 65px;
+  display: block;
+  width: 100%;
+}
