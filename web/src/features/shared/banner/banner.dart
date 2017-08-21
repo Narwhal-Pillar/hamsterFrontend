@@ -19,7 +19,7 @@ class BannerComponent<T extends BannerProps, S extends BannerState> extends UiSt
   render() {
 
     var divStyle = {
-      'backgroundImage': "url(${this.props.imageUrl})"
+      'backgroundImage': 'url("${this.props.imageUrl}")'
     };
 
     return ((Dom.div()

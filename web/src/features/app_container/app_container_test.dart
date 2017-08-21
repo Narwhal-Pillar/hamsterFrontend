@@ -20,7 +20,6 @@ void main() {
     test('Should render place details', () {
       var instance = render(AppContainer()());
       AppContainerComponent component = getDartComponent(instance);
-      
       var renderedComponent = findDomNode(component);
 
       expect(renderedComponent.querySelector('h2').text, "Loading");
@@ -39,6 +38,21 @@ void main() {
       expect(component.state.price.isNaN, false);
       expect(component.state.rating.isNaN, false);
       expect(component.state.distance.isNaN, false);
+    });
+  });
+
+  group("Location Tests", () {
+    test("Should return valid latitude and longitude numbers", () async {
+      var instance = render(AppContainer()());
+
+      AppContainerComponent component = getDartComponent(instance);
+
+      await component.getLocation();
+
+      RegExp exp = new RegExp(r"^(\-?\d+(\.\d+)?)$");
+
+      expect(exp.hasMatch(component.state.latitude.toString()), true);
+      expect(exp.hasMatch(component.state.longitude.toString()), true);
     });
   });
 }

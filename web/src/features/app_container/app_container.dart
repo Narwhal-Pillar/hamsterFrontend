@@ -14,15 +14,36 @@ class AppContainerState extends UiState {
   double rating;
   int price;
   double distance;
+  num latitude;
+  num longitude;
+
+
 }
 
 @Component()
 class AppContainerComponent<T extends AppContainerProps,
-    S extends AppContainerState> extends UiStatefulComponent<T, S> {
+S extends AppContainerState> extends UiStatefulComponent<T, S> {
   var url = 'https://hamster-wheel.herokuapp.com/places';
 
+  getLocation() {
+    try {
+      return window.navigator.geolocation.getCurrentPosition()
+          .then((Geoposition position) {
+        setState(newState()
+          ..latitude = position.coords.latitude
+          ..longitude = position.coords.longitude);
+      });
+    } catch (err) {
+        setState(newState()
+          ..latitude = 41.5842007
+          ..longitude = -93.6354468);
+    }
+    return new Future((){});
+  }
+
   getPlaceDetails() {
-    return HttpRequest.getString(url).then((response) {
+    var urlWithLocationParameters = url + "?location=${state.latitude},${state.longitude}";
+    return HttpRequest.getString(urlWithLocationParameters).then((response) {
       setPlaceDetails(JSON.decode(response));
     });
   }
@@ -39,17 +60,23 @@ class AppContainerComponent<T extends AppContainerProps,
 
   @override
   componentDidMount() {
-    getPlaceDetails();
+    getLocation().then((_) {
+      getPlaceDetails();
+    });
   }
-  
+
   render() {
     if (state.name == null) {
-       return ((Dom.div()..className = "row")((Dom.div()..className = "col-md-12")(
-        (TopNav())(),
-        Dom.h2()("Loading"))));
+      return ((Dom.div()
+        ..className = "row")((Dom.div()
+        ..className = "col-md-12")(
+          (TopNav())(),
+          Dom.h2()("Loading"))));
     }
 
-    return ((Dom.div()..className = "row")((Dom.div()..className = "col-md-12")(
+    return ((Dom.div()
+      ..className = "row")((Dom.div()
+      ..className = "col-md-12")(
         (TopNav())(),
         (PlaceDetails()
           ..imageUrl = state.imageUrl
