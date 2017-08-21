@@ -52,6 +52,7 @@ html, body {
   font-weight: 600;
   color: #fff;
   margin: 0;
+  text-shadow: 2px 2px 50px #000;
 }
 
 .place-details > li {
