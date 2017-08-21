@@ -18,12 +18,12 @@ class ActionControlsComponent extends UiComponent<ActionControlsProps> {
       (Dom.div()..className="col-xs-6")(
         (Dom.button()
         ..className="btn-action btn btn-lg btn-default")
-        ('No, Thanks')
+        ('Next')
       ),
       (Dom.div()..className="col-xs-6")(
         (Dom.button()
           ..className="btn-action btn btn-lg btn-primary pull-right")
-        ('Show Map')
+        ("Let's Go!")
       )
     );
   }

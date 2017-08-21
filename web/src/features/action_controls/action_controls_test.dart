@@ -25,8 +25,8 @@ void main() {
       ActionControlsComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
 
-      expect(renderedComponent.firstChild.text, 'No, Thanks');
-      expect(renderedComponent.lastChild.text, 'Show Map');
+      expect(renderedComponent.firstChild.text, 'Next');
+      expect(renderedComponent.lastChild.text, "Let's Go!");
     });
   });
 }
