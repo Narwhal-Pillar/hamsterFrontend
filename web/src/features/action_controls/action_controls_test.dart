@@ -11,5 +11,22 @@ void main() {
       
       expect(renderedComponent.toString(), 'div');
     });
+
+    test('Should contain two buttons', () {
+      var instance = render(ActionControls()());
+      ActionControlsComponent component = getDartComponent(instance);
+      var renderedComponent = findDomNode(component);
+
+      expect(renderedComponent.querySelectorAll('button').length, 2);
+    });
+
+    test('Buttons should render text nodes with action message', () {
+      var instance = render(ActionControls()());
+      ActionControlsComponent component = getDartComponent(instance);
+      var renderedComponent = findDomNode(component);
+
+      expect(renderedComponent.firstChild.text, 'Next place');
+      expect(renderedComponent.lastChild.text, 'Show route');
+    });
   });
 }

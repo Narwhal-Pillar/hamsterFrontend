@@ -5,15 +5,16 @@ UiFactory<ActionControlsProps> ActionControls;
 
 @Props()
 class ActionControlsProps extends UiProps {
-  // Props go here, declared as fields:
-  bool isDisabled;
-  Iterable<String> items;
+  
 }
 
 @Component()
 class ActionControlsComponent extends UiComponent<ActionControlsProps> {
   @override
   render() {
-    return Dom.div()(Dom.h3()('Action Controls'));
+    return Dom.div()(
+      Dom.button()('Next place'),
+      Dom.button()('Show route')
+    );
   }
 }
