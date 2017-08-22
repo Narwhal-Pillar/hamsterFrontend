@@ -17,8 +17,8 @@ class ActionControlsComponent extends UiComponent<ActionControlsProps> {
     )(
         (Dom.div()..className="col-xs-6")(
             (Dom.button()
-              ..className="btn-action btn btn-lg btn-default")
-              ..onClick = (e) => (props.nextBtnOnClickEvent())
+              ..className="btn-action btn btn-lg btn-default"
+              ..onClick = (e) => (props.nextBtnOnClickEvent()))
               ('Next')
         ),
         (Dom.div()..className="col-xs-6")(
