@@ -59,7 +59,7 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
   }
 
   @override
-  componentDidMount() {
+  componentWillMount() {
     getLocation().then((_) {
       getPlaceDetails();
     });
@@ -97,7 +97,9 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
               ..price = state.price
               ..distance = state.distance)())))
         ,
-        ActionControls()())
+        (ActionControls()
+          ..nextBtnOnClickEvent=getPlaceDetails 
+        )())
       );
   }
 }

@@ -4,7 +4,9 @@ part of over_react.web.features;
 UiFactory<ActionControlsProps> ActionControls;
 
 @Props()
-class ActionControlsProps extends UiProps {}
+class ActionControlsProps extends UiProps {
+  dynamic nextBtnOnClickEvent;
+}
 
 @Component()
 class ActionControlsComponent extends UiComponent<ActionControlsProps> {
@@ -18,7 +20,8 @@ class ActionControlsComponent extends UiComponent<ActionControlsProps> {
       )(
         (Dom.div()..className="col-xs-6")(
           (Dom.button()
-          ..className="btn-action btn btn-lg btn-default")
+          ..className="btn-action btn btn-lg btn-default"
+          ..onClick = (e) => (props.nextBtnOnClickEvent()))
         ('Next')
       ),
         (Dom.div()..className="col-xs-6")(
