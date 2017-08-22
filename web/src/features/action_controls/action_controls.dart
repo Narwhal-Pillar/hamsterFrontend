@@ -5,7 +5,6 @@ UiFactory<ActionControlsProps> ActionControls;
 
 @Props()
 class ActionControlsProps extends UiProps {
-  String dataLoadingText;
   dynamic nextBtnOnClickEvent;
 }
 
@@ -16,7 +15,6 @@ class ActionControlsComponent extends UiComponent<ActionControlsProps> {
   render() {
     return (Dom.div()..className = "row action-controls")(
         (Dom.div()..className = "col-xs-6")((Dom.button()
-          ..addProp('data-loading-text', 'loading...', true)
           ..className = "btn-action btn btn-lg btn-default"
           ..onClick = (e) => (props.nextBtnOnClickEvent()))('Next')),
         (Dom.div()..className = "col-xs-6")((Dom.button()
