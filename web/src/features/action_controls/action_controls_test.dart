@@ -8,7 +8,7 @@ void main() {
       var instance = render(ActionControls()());
       ActionControlsComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
-      
+
       expect(renderedComponent.toString(), 'div');
     });
 
@@ -27,6 +27,20 @@ void main() {
 
       expect(renderedComponent.firstChild.text, 'Next');
       expect(renderedComponent.lastChild.text, "Let's Go!");
+    });
+
+    test('Clicking the button should perform an action', () {
+      var flag = false;
+      var instance = render((ActionControls()
+        ..nextBtnOnClickEvent = () {
+          flag = true;
+        })());
+      ActionControlsComponent component = getDartComponent(instance);
+      var renderedComponent = findDomNode(component);
+
+      click(renderedComponent.firstChild.firstChild);
+
+      expect(flag, isTrue);
     });
   });
 }
