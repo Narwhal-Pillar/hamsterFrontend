@@ -34,15 +34,16 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
           ..longitude = position.coords.longitude);
       });
     } catch (err) {
-        setState(newState()
-          ..latitude = 41.5842007
-          ..longitude = -93.6354468);
+      setState(newState()
+        ..latitude = 41.5842007
+        ..longitude = -93.6354468);
     }
-    return new Future((){});
+    return new Future(() {});
   }
 
   getPlaceDetails() {
-    var urlWithLocationParameters = url + "?location=${state.latitude},${state.longitude}";
+    var urlWithLocationParameters = url +
+        "?location=${state.latitude},${state.longitude}";
     return HttpRequest.getString(urlWithLocationParameters).then((response) {
       setPlaceDetails(JSON.decode(response));
     });
@@ -84,6 +85,7 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
           ..foodType = state.foodType
           ..rating = state.rating
           ..price = state.price
-          ..distance = state.distance)())));
+          ..distance = state.distance)(),
+        Maps()())));
   }
 }

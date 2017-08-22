@@ -66,3 +66,7 @@ html, body {
   font-size: 70px;
   font-weight: 600;
 }
+
+#map-canvas {
+    height: 200px;
+}
