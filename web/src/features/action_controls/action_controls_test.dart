@@ -25,8 +25,8 @@ void main() {
       ActionControlsComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
 
-      expect(renderedComponent.firstChild.text, 'Next');
-      expect(renderedComponent.lastChild.text, "Let's Go!");
+      expect(renderedComponent.querySelectorAll('button')[0].text, "Next");
+      expect(renderedComponent.querySelectorAll('button')[1].text, "Let's Go!");
     });
   });
 }

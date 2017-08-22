@@ -1,12 +1,28 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 html, body {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
   font-family: 'Roboto', sans-serif;
   font-size: 100%;
+  padding-top: 35px;
+  /* padding-bottom: 70px; */
+}
+
+.loader {
+  margin-top: 200px;
+  text-align: center;
+}
+
+.loader i {
+  vertical-align: middle;
+}
+
+.loader span {
+  font-size: 20px;
+  vertical-align: middle;
 }
 
 #output {
@@ -15,32 +31,44 @@ html, body {
   text-align: center;
 }
 
+.well {
+  padding: 0;
+  padding-bottom: 1px;
+  border: 0px solid transparent;
+  box-shadow: 2px 2px 11px rgba(0,0,0,0.15);
+}
+
+.list-unstyled {
+  margin: 0 15px;
+}
+
 .top-nav {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #ffb747;
 }
 
 .nav-logo-image {
   display: inline-block;
-  height: 8em;
+  height: 35px;
 }
 
 .nav-logo-text {
   display: inline-block;
   margin: 0;
   vertical-align: middle;
-  font-size: 4em;
+  font-size: 20px;
   font-weight: 500;
   text-transform: lowercase;
 }
 
 .banner {
-  min-height: 500px;
+  min-height: 160px;
   background: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 .banner-title {
@@ -48,7 +76,7 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  font-size: 62px;
+  font-size: 30px;
   font-weight: 600;
   color: #fff;
   margin: 0;
@@ -56,19 +84,34 @@ html, body {
 }
 
 .place-details > li {
-  margin-bottom: 45px;
+  margin-bottom: 10px;
 }
 .place-details > li > label {
   margin-right: 10px;
 }
 .place-details > li > span,
 .place-details > li > label {
-  font-size: 70px;
+  font-size: 20px;
   font-weight: 600;
+  color: #282c42;
+}
+
+@media (min-width: 600px) {
+  .place-details > li > span,
+  .place-details > li > label {
+    color: red;
+    font-size: 20px;
+    font-weight: 600;
+  }
 }
 
 .btn-action {
-  font-size: 65px;
   display: block;
   width: 100%;
+  margin-bottom: 30px;
+  border-color: transparent;
+}
+
+.btn-primary {
+  background: #ffb747;
 }
