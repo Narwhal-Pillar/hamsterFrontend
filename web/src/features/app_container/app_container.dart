@@ -67,25 +67,39 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
 
   render() {
     if (state.name == null) {
-      return ((Dom.div()
-        ..className = "row")((Dom.div()
-        ..className = "col-md-12")(
+      return (
+        Dom.div()(
           (TopNav())(),
-          Dom.h2()("Loading"))));
+          ((Dom.div()..className="container-fluid")(
+            (Dom.div()
+          ..className = "row")((Dom.div()
+          ..className = "col-md-12")(
+            (Dom.div()..className="loader")(
+              (Dom.i()..className="fa fa-circle-o-notch fa-spin fa-2x fa-fw")(),
+              Dom.span()("Loading")
+            ))))
+          ))
+        );
     }
 
-    return ((Dom.div()
-      ..className = "row")((Dom.div()
-      ..className = "col-md-12")(
-        (TopNav())(),
-        (PlaceDetails()
-          ..imageUrl = state.imageUrl
-          ..restaurantName = state.name
-          ..foodType = state.foodType
-          ..rating = state.rating
-          ..price = state.price
-          ..distance = state.distance)(),
+    return (
+      Dom.div()(
+        (TopNav()()),
+        (Dom.div()..className="container-fluid")(
+          (Dom.div()
+            ..className = "row")((Dom.div()
+            ..className = "col-md-12")(
+            (PlaceDetails()
+              ..imageUrl = state.imageUrl
+              ..restaurantName = state.name
+              ..foodType = state.foodType
+              ..rating = state.rating
+              ..price = state.price
+              ..distance = state.distance)())))
+        ,
         (ActionControls()
-          ..nextBtnOnClickEvent=getPlaceDetails)())));
+          ..nextBtnOnClickEvent=getPlaceDetails 
+        )())
+      );
   }
 }

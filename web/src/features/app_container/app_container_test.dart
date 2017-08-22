@@ -22,7 +22,7 @@ void main() {
       AppContainerComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
 
-      expect(renderedComponent.querySelector('h2').text, "Loading");
+      expect(renderedComponent.querySelector('.loader').text, "Loading");
 
     });
 
