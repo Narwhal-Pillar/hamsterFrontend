@@ -16,13 +16,25 @@ class PlaceTypeTextState extends UiState {
 @Component()
 class PlaceTypeTextComponent<T extends PlaceTypeTextProps, S extends PlaceTypeTextState> extends UiStatefulComponent<T, S> {
   
+  filterPlaceType(String placeTypeList) {
+    var filteredList = [];
+    var list = placeTypeList.split(",");
+    for (var element in list) {
+      var acceptedTypes = ['restaurant', 'food'];
+      if (acceptedTypes.contains(element.toLowerCase().trim())) {
+        filteredList.add(element.trim());
+      }
+    }
+    return filteredList.join(', ');
+  }
+
   @override
   getDefaultProps() => (newProps()
-    ..placeType = 'None Listed'
+    ..placeType = ''
   );
 
   render() {
-    return (Dom.span()(props.placeType));
+    return (Dom.span()(filterPlaceType(props.placeType)));
   }
 }
 
