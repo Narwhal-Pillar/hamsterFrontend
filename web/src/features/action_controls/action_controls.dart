@@ -18,16 +18,11 @@ class ActionControlsComponent extends UiComponent<ActionControlsProps> {
           Dom.div()
         ..className="row action-controls"
       )(
-        (Dom.div()..className="col-xs-6")(
+        (Dom.div()..className="col-xs-12")(
           (Dom.button()
           ..className="btn-action btn btn-lg btn-default"
           ..onClick = (e) => (props.nextBtnOnClickEvent()))
         ('Next')
-      ),
-        (Dom.div()..className="col-xs-6")(
-          (Dom.button()
-            ..className="btn-action btn btn-lg btn-primary pull-right")
-        ("Let's Go!")
       )
     )))));
   }
