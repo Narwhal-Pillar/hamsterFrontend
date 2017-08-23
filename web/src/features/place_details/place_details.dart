@@ -7,7 +7,7 @@ UiFactory<PlaceDetailsProps> PlaceDetails;
 class PlaceDetailsProps extends UiProps {
   String restaurantName;
   String imageUrl;
-  String foodType;
+  String type;
   int price;
   double rating;
   double distance;
@@ -26,8 +26,8 @@ class PlaceDetailsComponent<T extends PlaceDetailsProps, S extends PlaceDetailsS
       )
       ()),
       ((Dom.ul()..className="list-unstyled place-details")(
-        ((Dom.li()..name="food-type")(
-          (Dom.label()("Food Type: ")), (FoodTypeText()..foodType=this.props.foodType)()
+        ((Dom.li()..name="type")(
+          (Dom.label()("Type: ")), (PlaceTypeText()..placeType=this.props.type)()
         )),
         ((Dom.li()..name="price")(
           (Dom.label()("Price: ")), (PriceRange()..priceRange=this.props.price)()
