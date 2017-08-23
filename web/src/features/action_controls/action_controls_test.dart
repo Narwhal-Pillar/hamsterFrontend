@@ -17,7 +17,7 @@ void main() {
       ActionControlsComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
 
-      expect(renderedComponent.querySelectorAll('button').length, 2);
+      expect(renderedComponent.querySelectorAll('button').length, 1);
     });
 
     test('Buttons should render text nodes with action message', () {
@@ -26,7 +26,6 @@ void main() {
       var renderedComponent = findDomNode(component);
 
       expect(renderedComponent.querySelectorAll('button')[0].text, "Next");
-      expect(renderedComponent.querySelectorAll('button')[1].text, "Let's Go!");
     });
 
     test('Clicking the button should perform an action', () {
