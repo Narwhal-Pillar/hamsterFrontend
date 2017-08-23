@@ -92,7 +92,7 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
             (PlaceDetails()
               ..imageUrl = state.imageUrl
               ..restaurantName = state.name
-              ..foodType = state.foodType
+              ..type = state.foodType
               ..rating = state.rating
               ..price = state.price
               ..distance = state.distance)())))
