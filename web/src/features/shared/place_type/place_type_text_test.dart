@@ -19,7 +19,7 @@ void main(){
       PlaceTypeTextComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
 
-      expect(renderedComponent.text, 'Restaurant, Food');  
+      expect(renderedComponent.text, 'Restaurant');
     });
 
     test('Should return default property if no place type is passed',(){
@@ -31,7 +31,7 @@ void main(){
     });
 
     test('Should only return restaurant place type', () {
-      var instance = render((PlaceTypeText()..placeType='Restaurant,Something Unwanted, Other Crap')());
+      var instance = render((PlaceTypeText()..placeType='Restaurant, Something Unwanted, Other Crap')());
       PlaceTypeTextComponent component = getDartComponent(instance);
       var renderedComponent = findDomNode(component);
 
