@@ -3069,11 +3069,11 @@ c6:function(a,b){var z,y,x,w,v,u,t,s
 try{z=a.$0()
 u=z
 if(H.cq(u,"$isa1",[b],"$asa1"))return z
-else{u=[b]
-t=$.l
-if(!!J.o(z).$isa1){u=new P.A(0,t,null,u)
+else{u=$.l
+t=[b]
+if(!!J.o(z).$isa1){u=new P.A(0,u,null,t)
 u.aC(z)
-return u}else{u=new P.A(0,t,null,u)
+return u}else{u=new P.A(0,u,null,t)
 u.a=4
 u.c=z
 return u}}}catch(s){y=H.L(s)
