@@ -8,8 +8,7 @@ void main() {
       var instance = render((PlaceDetails()
         ..type='Mexican'
         ..rating=3.3
-        ..price=1
-        ..distance=1.7)());
+        ..price=1)());
 
       PlaceDetailsComponent component = getDartComponent(instance);
 
@@ -23,7 +22,6 @@ void main() {
         ..type='Restaurant'
         ..rating=3.3
         ..price=1
-        ..distance=1.7
         ..restaurantName="Jimmy John's"
         ..imageUrl="http://via.placeholder.com/350x150"
       )());
@@ -36,7 +34,6 @@ void main() {
       expect(renderedComponent.querySelector('[name=type]').text, 'Type: Restaurant');
       expect(renderedComponent.querySelector('[name=price]').children[1].children.length, 1);
       expect(renderedComponent.querySelector('[name=rating]').children[1].children.length, 5);
-      expect(renderedComponent.querySelector('[name=distance]').text, 'Distance: 1.7 miles');
     });
   });
 }
