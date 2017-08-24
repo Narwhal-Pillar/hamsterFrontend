@@ -13,11 +13,8 @@ class AppContainerState extends UiState {
   String imageUrl;
   double rating;
   int price;
-  double distance;
   num latitude;
   num longitude;
-
-
 }
 
 @Component()
@@ -54,8 +51,7 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
       ..imageUrl = placeDetails[0]["ImageUrl"]
       ..foodType = placeDetails[0]["FoodType"]
       ..price = placeDetails[0]["Price"]
-      ..rating = placeDetails[0]["Rating"]
-      ..distance = placeDetails[0]["Distance"]);
+      ..rating = placeDetails[0]["Rating"]);
   }
 
   @override
@@ -94,8 +90,7 @@ S extends AppContainerState> extends UiStatefulComponent<T, S> {
               ..restaurantName = state.name
               ..type = state.foodType
               ..rating = state.rating
-              ..price = state.price
-              ..distance = state.distance)())))
+              ..price = state.price)())))
         ,
         (ActionControls()
           ..nextBtnOnClickEvent=getPlaceDetails 

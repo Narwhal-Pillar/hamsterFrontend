@@ -1,8 +1,5 @@
 import 'package:over_react_test/over_react_test.dart';
 import 'package:test/test.dart';
-import 'dart:async';
-// import 'package:http/testing.dart';
-import 'dart:convert';
 import '../../features.dart';
 
 void main() {
@@ -37,7 +34,6 @@ void main() {
       expect(component.state.foodType.isNotEmpty, true);
       expect(component.state.price.isNaN, false);
       expect(component.state.rating.isNaN, false);
-      expect(component.state.distance.isNaN, false);
     });
   });
 

@@ -10,7 +10,6 @@ class PlaceDetailsProps extends UiProps {
   String type;
   int price;
   double rating;
-  double distance;
 }
 
 @State()
@@ -34,9 +33,6 @@ class PlaceDetailsComponent<T extends PlaceDetailsProps, S extends PlaceDetailsS
         )),
         ((Dom.li()..name="rating")(
           (Dom.label()("Rating: ")), (Rating()..rating=this.props.rating)()
-        )),
-        ((Dom.li()..name="distance")(
-          (Dom.label()("Distance: ")), (Distance()..distance=this.props.distance)()
         ))
       ))
     ));
