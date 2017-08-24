@@ -10,6 +10,7 @@ html, body {
 .loader {
   margin-top: 200px;
   text-align: center;
+  color: #282c42;
 }
 
 .loader i {
@@ -72,11 +73,12 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 600;
   color: #fff;
   margin: 0;
   text-shadow: 2px 2px 50px #000;
+  min-width: 95%;
 }
 
 .place-details > li {
@@ -99,6 +101,9 @@ html, body {
   border-color: transparent;
 }
 
-.btn-primary {
-  background: #ffb747;
+.btn-default,
+.btn-default:active,
+.btn-default:focus {
+  background: #ffb747 !important;
+  color: #282c42;
 }
